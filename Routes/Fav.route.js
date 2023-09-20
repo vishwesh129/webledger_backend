@@ -7,6 +7,11 @@ const authenticate = require('../Middlewares/authenticate');
 
 const favouriteRecipeRouter = express.Router();
 
+
+favouriteRecipeRouter.get('/', (req, res)=>{
+    res.send("fav recipe");
+})
+
 favouriteRecipeRouter.post('/add', authenticate, async (req, res) => {
     try {
         const { user } = req;
